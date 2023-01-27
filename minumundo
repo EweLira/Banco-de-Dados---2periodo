@@ -1,0 +1,76 @@
+MINI-MUNDO FESTIVAL
+
+1 Introdução
+
+Esse projeto tem por objetivo a modelagem de um sistema de festival de uma produtora de eventos. Cientes de todas as dificuldades e burocracias que há para se realizar e gerenciar um festival, esse sistema será capaz de armazenar e utilizar os dados de maneira eficiente e simples para que a administração não tenha maiores obstáculos na hora do gerenciamento. Ela será capaz de identificar facilmente o que cada festival precisa para funcionar.
+
+2 Descrição dos objetivos da aplicação
+
+O mini mundo descrito representa um sistema de informação para o gerenciamento de um festival. A aplicação deve ser capaz de descrever com certa fidelidade um subconjunto dos envolvidos em atividades tais como agendamento de festivais e organização de eventos, com a principal função de reservar o espaço físico. Sendo assim, também será possível criar um boletim informativo para o público, contendo os próximos artistas musicais a se apresentarem e nos festivais mais próximos.
+
+3 Descrição do mundo real a ser modelado
+
+Com esse projeto pretendemos nos aproximar ao máximo possível da realidade, para descrever temos o seguinte minimundo: 
+
+Os membros do festival possui nome completo, CPF, email, sexo, data de nascimento, estado civil, telefone(s) e endereço (formado por rua, número, complemento, bairro, cidade, estado e CEP).
+Os membros do festival se dividem em produtor, artista musical e espectador. Os artistas são membros do festival que realizam performances, shows, entre outros eventos.
+Os espectadores são aqueles membros do festival que não possuem um cargo específico (nem artista, nem produtor).
+É papel do produtor, organizar os eventos que ocorrem em espaços próximos, no sentido de observar o calendário de eventos de shows e fornecer as informações necessárias para todos os membros do festival interessados em participar dos mesmos. São informações de um evento o seu id, data, valor_do_ingresso e local. É importante também notar que cada evento possui programações associadas, contendo horário, título e produtora de eventos. 
+
+
+4 Descrição informal dos dados 
+
+4.1 Entidades
+
+Membro: Os atributos de membro são:
+CPF(chave);
+Nome;
+Sexo;
+Data de nascimento;
+Endereço{
+Rua, 
+Número, 
+Complemento, 
+Bairro, 
+Cidade,
+Estado, 
+CEP }
+
+Telefone
+Estado Civil
+Email.
+
+Produtor: Especialização de Membro.
+Artista: Especialização de Membro.
+Espectador: Especialização de Membro.
+
+Evento:
+ID (chave);
+Data;
+Valor_do_ingresso; 
+Local_de_realização;
+
+Programação:
+Horário; 
+Título; 
+Produtora de eventos. 
+
+4.2 Relacionamentos
+
+Um membro do festival é necessariamente ou produtor ou espectador ou artista.
+Um  produtor agenda um ou mais festivais. Um festival deve ser agendado por um produtor. Um festival é uma entidade associativa entre artista e espectador, de forma que um artista pode se apresentar para vários espectadores e um espectador pode assistir várias performances de artistas.
+Um evento deve possuir várias programações, sendo o horário de determinada programação um atributo discriminador. Porém, cada programação está relacionada a um único evento.
+Membros do festival presenciam eventos. Cada evento recebe a presença de vários membros do festival.
+Um evento é organizado por um produtor. Produtores podem organizar mais de um evento.
+
+5 Descrição de perguntas e relatórios gerados
+
+Consultar quais são os membros do festival; 
+Consultar quais membros do festival são artistas; 
+Consultar quais membros do festival são espectadores;
+Consultar quais membros do festival são produtores;
+Consultar quais são os eventos organizados no show; 
+Consultar a agenda de um determinado artista;
+Consultar quantos membros do festival compareceram a cada evento;
+Consultar os agendamentos foram realizados por um produtor;
+Consultar produtora de evento pela programação de cada evento.
